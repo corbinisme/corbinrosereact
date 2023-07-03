@@ -1,4 +1,25 @@
+html, body {
+  min-height: 100vh;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+.layout-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 .map-container {
   width: 700px;
   height: 400px;
+}
+main{
+  margin-top: 8em;
+}
+
+.content-project .content-div img,
+.content-web .content-div img {
+  width: 100px;
+  height: auto;
 }
