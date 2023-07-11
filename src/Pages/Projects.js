@@ -24,7 +24,7 @@ function Projects(){
             {data&& data.map(item=>{
 
                 return(
-                    <Post key={item.id} item={item} type="project" />
+                    <Post key={item.id} item={item} type="projects" />
                 )
             })}
         </div>

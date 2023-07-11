@@ -1,4 +1,4 @@
-import React from "react";
+import { Link } from 'react-router-dom';
 import Navigation from "./Navigation";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
@@ -19,10 +19,10 @@ export default function Header (props){
 
                     <div className="col-auto p-0">
                         <div className="navbar-brand d-flex align-items-center">
-                            <a href="/">
+                            <Link to="/" onClick={()=>{props.changePage("/")}}>
                                 <img src="img/logo.svg" height="60" />
                                 corbin<span>rose</span>
-                            </a>
+                            </Link>
                         </div>
                     </div>
                     <div className="col-3 col-md-auto p-0 text-right">
@@ -35,7 +35,7 @@ export default function Header (props){
                     </button>
                     </div>
                     <div className={`collapse navbar-collapse col-12 col-md-auto p-0 ${menuOpen}`}>
-                        <Navigation type="full" menu={props.menu} page={props.page} changePage={props.changePage} />
+                        <Navigation type="full" navclass="navbar-nav" menu={props.menu} page={props.page} changePage={props.changePage} />
                         <div className="subMenu">
 
                             <ul className="nav navbar-nav">

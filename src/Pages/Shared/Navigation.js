@@ -11,7 +11,7 @@ export default function Navigation (props){
 
     const pathname=""; 
     const changePage = props.changePage
-    
+    const navclass = (props.navclass?props.navclass:"");
     
     /*
     useEffect(() => {
@@ -26,17 +26,18 @@ export default function Navigation (props){
     return (
        
           
-        <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+        <ul className={`${navclass} me-auto mb-2 mb-lg-0`}>
 
 
             {props.menu.map(item=>{
 
+                const isCurrent = (props.page.indexOf(item.url)>-1?"active":"");
                 return(
-                 <li className={`nav-item ${(props.page==item.url? "active": "")}`} key={item.name}>
+                 <li className={`nav-item ${isCurrent}`} key={item.name}>
                     <Link 
                         to={item.url}
                         onClick={()=>{props.changePage(item.url)}}
-                        className={`nav-link ${(props.page==item.url? "active": "")}`} >
+                        className={`nav-link ${isCurrent}`} >
                         {item.name}
                     </Link>
                 </li>
