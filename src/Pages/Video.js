@@ -1,21 +1,37 @@
 import { useEffect, useState } from "react";
+import Modal from "./Shared/Modal";
 
+import VideoPlaylist from "../Components/VideoPlaylist";
 
 function Video(){
 
-    const [data, setData] = useState([])
+    const [currentVid, setCurrentVid] = useState("")
 
-    useEffect(()=>{
-        fetch(`https://rss-to-json-serverless-api.vercel.app/api?feedURL=https://www.youtube.com/feeds/videos.xml?playlist_id=PLBbco3VjkpdNFUGAYr1HoowhQcLjmfnkb`)
-        .then(resp=>resp.json())
-        .then(data =>{
-            console.log("data", data)
-        })
-    }, []);
 
+    const handleVideoClick = (e) => {
+ 
+        e.preventDefault();
+        let anchor = e.target.closest("a");
+        let ytLink = anchor.getAttribute("data-link")
+        console.log(ytLink);
+        setCurrentVid(ytLink)
+    }
     return (
         <div className="container">
-            Video
+            <h1 className="entry-title">Video</h1>
+
+            <Modal content={currentVid} />
+            <hr />
+            <VideoPlaylist handleVideoClick={handleVideoClick} playlistID="PLBbco3VjkpdNFUGAYr1HoowhQcLjmfnkb" />
+            <hr />
+            <VideoPlaylist handleVideoClick={handleVideoClick} playlistID="PLBCBEB0D1725E5105" />
+            <hr />
+            
+            <VideoPlaylist handleVideoClick={handleVideoClick} playlistID="PLBbco3VjkpdNI8-G-DFoQ4VwXeltnNt2l" />
+            <hr />
+
+           
+            
 
         </div>
     )

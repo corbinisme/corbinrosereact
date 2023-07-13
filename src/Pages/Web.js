@@ -7,12 +7,14 @@ function Web(){
 
     useEffect(()=>{
 
-        const url = "https://corbinrose.com/blog/wp-json/wp/v2/posts?categories=361";
+        const url = "blog/wp-json/wp/v2/posts?categories=361";
         fetch(url)
             .then(resp=>resp.json())
             .then(data=>{
   
                 setData(data)
+            }).catch(err=>{
+                console.log(err)
             });
     },[])
 

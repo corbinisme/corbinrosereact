@@ -2,6 +2,7 @@
   "name": "corbinrosereact",
   "version": "0.1.0",
   "private": true,
+  "proxy": "https://corbinrose.com",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.2",
     "@fortawesome/free-solid-svg-icons": "^6.1.2",
@@ -19,6 +20,9 @@
     "reactstrap": "^9.2.0",
     "rss-to-json": "^2.1.1",
     "web-vitals": "^2.1.4"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "7.21.11"
   },
   "scripts": {
     "start": "react-scripts start",

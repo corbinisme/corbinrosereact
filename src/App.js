@@ -47,11 +47,11 @@ function App() {
   ]
 
 
-  const mainColumn = (page=="/"?12:9);
-  const subColDisplay = (page=="/"?"hidden":"")
+  const mainColumn = (page=="/d"?12:9);
+  const subColDisplay = (page=="/d"?"hidden":"")
 
   return (
-    <div className="corbinrose-app layout-wrapper d-flex flex-column h-100">
+    <div className={`corbinrose-app layout-wrapper d-flex flex-column h-100`} data-page={page}>
 
       <BrowserRouter basename="/">
       <Header menu={menu} page={page} changePage={changePage} />
@@ -60,7 +60,7 @@ function App() {
           
           <div className="container">
           <Row>
-            <Col md={mainColumn}>
+            <Col md={mainColumn} className="mainColumn">
 
            
             <Routes>
