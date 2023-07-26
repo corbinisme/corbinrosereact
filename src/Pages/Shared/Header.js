@@ -20,7 +20,7 @@ export default function Header (props){
                     <div className="col-auto p-0">
                         <div className="navbar-brand d-flex align-items-center">
                             <Link to="/" onClick={()=>{props.changePage("/")}}>
-                                <img src="img/logo.svg" height="60" />
+                                <img src="/img/logo.svg" height="60" />
                                 corbin<span>rose</span>
                             </Link>
                         </div>

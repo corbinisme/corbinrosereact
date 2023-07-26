@@ -8,6 +8,7 @@ import Projects from "./Pages/Projects";
 import Web from "./Pages/Web";
 import Video from "./Pages/Video";
 import Home from "./Pages/Home";
+import Hero from "./Pages/Shared/Hero";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { connect } from 'react-redux';
@@ -47,8 +48,8 @@ function App() {
   ]
 
 
-  const mainColumn = (page=="/d"?12:9);
-  const subColDisplay = (page=="/d"?"hidden":"")
+  const mainColumn = (page=="/"?12:9);
+  const subColumn = (page=="/"?12:3)
 
   return (
     <div className={`corbinrose-app layout-wrapper d-flex flex-column h-100`} data-page={page}>
@@ -56,7 +57,8 @@ function App() {
       <BrowserRouter basename="/">
       <Header menu={menu} page={page} changePage={changePage} />
     
-      <main className="mt-10 flex-shrink-0 pb-5">
+      <Hero page={page} title={(page=="/"?"Corbinrose": page.replace("/","").toUpperCase())} />
+      <main className="flex-shrink-0 pb-5">
           
           <div className="container">
           <Row>
@@ -80,7 +82,7 @@ function App() {
             </Routes>
 
             </Col>
-            <div className={`col col-md-3 ${subColDisplay}`}>
+            <div className={`col col-md-${subColumn}`}>
               <Sidebar page={page} menu={menu} changePage={changePage} />
             </div>
           </Row>

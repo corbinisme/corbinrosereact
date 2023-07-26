@@ -4,7 +4,7 @@ function Post(props){
 
     const item = props.item;
     const type = props.type;
-    const linky = "/" + type + "/" + item.id;
+    const linky = "/" + type + "/" + item.slug;
     return(
         <div className={`entry content-${type}`} key={item.id}>
 

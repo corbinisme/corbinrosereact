@@ -5,7 +5,7 @@ function Modal(props){
     return(
         <div className="modals fade show" 
         id="mainModal" 
-        tabindex="-1" aria-labelledby="mainModalLabel" 
+        tabIndex="-1" aria-labelledby="mainModalLabel" 
         aria-modal="true" role="dialog" 
         style={{"display": "block"}}>
             <div className="modal-dialog modal-lg">
