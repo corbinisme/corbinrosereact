@@ -26,7 +26,7 @@ function VideoPlaylist(props){
             {data.items && data.items.map(item=>{
 
                 return(
-                    <div className={`col-md-3 ${styles.col}`} key={item.id}>
+                    <div className={`col-md-4  ${styles.col}`} key={item.id}>
                         <a href="#" onClick={handleVideoClick} 
                         data-link={item.link} target="_blank">
                             <figure>

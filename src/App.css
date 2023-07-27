@@ -1,8 +1,14 @@
+:root {
+  --heading-color: #222;
+  --body-bg: #fff;
+}
+
 html, body {
   min-height: 100vh;
   width: 100%;
   padding: 0;
   margin: 0;
+  background-color: var(--body-bg);
 }
 .layout-wrapper {
   min-height: 100vh;
@@ -54,4 +60,47 @@ html, body {
 footer .navbar-nav li {
   display: flex;
   flex: 1 auto;
+}
+
+.page-home .section {
+  margin-top: 5em;
+  margin-bottom: 5em;
+  font-size: 1.3em;
+}
+.page-home .section .smaller-text {
+  font-size: .7em;
+}
+.page-home .section .smaller-text h3 {
+  font-size: 1.7em;
+}
+.page-home .main-column h2 {
+  font-size: 2.3em;
+  display: inline-block;
+  margin-bottom: 1em;
+  padding-bottom: .3em;
+  border-bottom: 4px solid var(--heading-color)
+}
+
+.page-home main>.container {
+  max-width: 100%;
+}
+
+.page-home .word-of-the-day {
+  background-image: url(https://corbinrose.com/blog/wp-content/uploads/2023/07/IMG_20130725_121530_993-scaled.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+
+/* utils */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 10px;
+}
+
+.grid-item {
+  background-color: #ccc;
+  padding: 20px;
+  text-align: center;
 }

@@ -11,7 +11,7 @@ export default function Header (props){
     const menuOpen = (props.menuopen? "show": "");
    
     return (
-        <header className="fixed-top mainHeader">
+        <header className="fixed-top main-header">
            
            <nav className="navbar navbar-expand-lg navbar-light bg-light text-dark">
             

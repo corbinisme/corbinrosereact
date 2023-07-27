@@ -50,19 +50,20 @@ function App() {
 
   const mainColumn = (page=="/"?12:9);
   const subColumn = (page=="/"?12:3)
+  const pageClass = (page=="/"? "page-home": `page-${page.replace("/","")}`)
 
   return (
-    <div className={`corbinrose-app layout-wrapper d-flex flex-column h-100`} data-page={page}>
+    <div className={`corbinrose-app layout-wrapper d-flex flex-column h-100 ${pageClass}`} data-page={page}>
 
       <BrowserRouter basename="/">
       <Header menu={menu} page={page} changePage={changePage} />
     
       <Hero page={page} title={(page=="/"?"Corbinrose": page.replace("/","").toUpperCase())} />
-      <main className="flex-shrink-0 pb-5">
+      <main className="flex-shrink-0 pb-5 main-content">
           
-          <div className="container">
+          <div className={`container ${pageClass}-container`}>
           <Row>
-            <Col md={mainColumn} className="mainColumn">
+            <Col md={mainColumn} className="main-column">
 
            
             <Routes>
